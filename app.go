@@ -2,8 +2,8 @@ package main
 
 import (
   "fmt"
-  "os"
   "lib/config"
+  "models"
  // "launchpad.net/goyaml"
 )
 
@@ -12,9 +12,4 @@ import (
 func main() {
   fmt.Println("Booting server...")
   
-}
-
-
-func load_config_file(path string) {
-
 }
