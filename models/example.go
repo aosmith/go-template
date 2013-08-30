@@ -1,4 +1,4 @@
-
+package main
 
 
 
@@ -21,5 +21,24 @@ type Example struct {
 // type.
 
 func (user Example) send_welcome_email() bool {
+
+}
+
+
+// There are going to be a lot of generic functions in here,
+// we can write a really simple genmrator for these that
+// creates the stub.go with interpolation.
+
+func (user Example) save() (Example, err) {
+
+
+}
+
+func (user Example) find() ([]Example) {
+
+
+}
+
+func (user Example) find_or_create_by(keys []string, key string) (Example) {
 
 }
