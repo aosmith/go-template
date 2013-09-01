@@ -2,8 +2,8 @@ package main
 
 import (
   "fmt"
-  "lib/config"
-  "models"
+  "net/http"
+  "handlers"
  // "launchpad.net/goyaml"
 )
 
@@ -11,5 +11,6 @@ import (
 
 func main() {
   fmt.Println("Booting server...")
-  
+  http.HandleFunc("/", handlers.IndexHandler)
+  http.ListenAndServe(":8080", nil)
 }
