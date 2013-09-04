@@ -13,8 +13,6 @@ func main() {
   if len(args) > 1 {
     if args[1] == "generate" {
       run_generator(args[1:])
-    } else if args[1] == "server" {
-      start_server()
     } else {
       fmt.Printf("Unknown argument: %s\n", args[1])
     }
