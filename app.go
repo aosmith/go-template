@@ -4,19 +4,15 @@ import (
   "fmt"
   "net/http"
   "router"
+  "config"
   "os"
- // "launchpad.net/goyaml"
 )
-
-
 
 func main() {
   args := os.Args
   if len(args) > 1 {
-    if args[1] == "test" {
-      fmt.Println("Running test suite...")
-    } else if args[1] == "generate" {
-      fmt.Println("Running generator...")
+    if args[1] == "generate" {
+      run_generator(args[1:])
     } else if args[1] == "server" {
       start_server()
     } else {
@@ -29,9 +25,9 @@ func main() {
 
 
 func start_server() {
-  fmt.Println("Booting server...")
+  fmt.Printf("Starting server: %s:%d\n", config.Host, config.Port)
   http.HandleFunc("/", router.ApplicationRouter)
-  http.ListenAndServe(":8080", nil)
+  http.ListenAndServe(config.PortString(), nil)
 }
 
 func run_generator(args []string) {

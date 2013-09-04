@@ -6,12 +6,7 @@ import (
 )
 
 
-
-func main() {
-  fmt.Println("Booting router...")
-}
-
-
 func ApplicationRouter(writer http.ResponseWriter, request *http.Request) {
-  fmt.Println("Booting router...")
+  fmt.Printf("Routing request: %s\n", request.URL.Path)
+
 }
